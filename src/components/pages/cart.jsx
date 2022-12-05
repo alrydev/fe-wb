@@ -2,7 +2,7 @@ import bin from "../../assets/bin.svg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
 import Header from "../modules/header";
-import React, { useContext, useState } from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useMutation, useQuery } from 'react-query';
 import { API } from '../config/api';
@@ -19,8 +19,6 @@ function Cart() {
     const response = await API.get("/carts");
     return response.data.data;
   });
-
-
 
 
   const dataCarts = cart?.filter((item) => {

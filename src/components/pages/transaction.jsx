@@ -32,6 +32,7 @@ export default function Income() {
       // getUser()
     }
   }, [])
+
   return (
     <>
       <Header />

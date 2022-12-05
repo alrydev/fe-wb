@@ -10,8 +10,6 @@ export default function Income() {
   const navigate = useNavigate()
   const [state, dispatch] = React.useContext(UserContext)
 
-  // const [id, setId] = React.useState()
-  // const [user, setUser] = React.useState()
 
   const [transaction, setTransaction] = React.useState([])
   // const [transactionPopUp, setTransactionPopUp] = React.useState(false);
@@ -25,14 +23,6 @@ export default function Income() {
     }
   };
 
-  // const getUser = async () => {
-  //   try {
-  //     const res = await API.get(`/user/${id}`);
-  //     setUser(res.data.data.name);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
 
   React.useEffect(() => {
     if (state.isLogin === false || state.user.status === "customer") {
@@ -53,7 +43,7 @@ export default function Income() {
               <tr>
                 <th>No.</th>
                 <th>Name</th>
-                <th>Product</th>
+                {/* <th>Product</th> */}
                 <th>Income</th>
                 <th>Status</th>
                 <th>Date</th>
@@ -64,10 +54,10 @@ export default function Income() {
                 <tr>
                   <td>{index + 1}</td>
                   <td>{data.user.name}</td>
-                  <td>{data.cart.map((data, index) => (
+                  {/* <td>{data.cart.map((data, index) => (
                     <h6 className="productIncome" key={index}>
                       {data.product.title}, </h6>
-                  ))}</td>
+                  ))}</td> */}
                   <td>Rp {data.amount}</td>
                   <td>{data.status}</td>
                   <td>

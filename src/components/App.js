@@ -9,9 +9,6 @@ import Profile from "./pages/profile"
 import DetailProduct from "./pages/detail-product"
 import { UserContext } from "../components/context/userContext"
 import { API, setAuthToken } from './config/api'
-import ProductsList from "./pages/products-list"
-import ToppingsList from "./pages/toppings-list"
-import ProfileUpdate from "./pages/profile-update"
 
 if (localStorage.token) {
   setAuthToken(localStorage.token)
@@ -71,10 +68,7 @@ export default function App() {
       <Route path='/income' element={<Income />} />
       <Route path='/cart' element={<Cart />}/>
       <Route path='/profile' element={<Profile />}/>
-      <Route path='/update-profile' element={<ProfileUpdate />}/>
       <Route path='/detail-product/:id' element={<DetailProduct />}/>
-      <Route path='/products-list' element={<ProductsList />}/>
-      <Route path='/toppings-list' element={<ToppingsList />}/>
     </Routes>
   )
 }

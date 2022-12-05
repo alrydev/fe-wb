@@ -9,15 +9,10 @@ import { API } from '../config/api';
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Form from 'react-bootstrap/Form';
-import { UserContext } from "../context/userContext"
 
 
 function Cart() {
   let navigate = useNavigate();
-  // const [state, dispatch] = useContext(UserContext)
-
-  // const[cart, setCart] = useState([])
-  // const[idCarts, setIdCarts]= useState([])
   const [popUp] = React.useState(false);
 
   let { data: cart, refetch } = useQuery("cartsCache", async () => {
@@ -25,15 +20,7 @@ function Cart() {
     return response.data.data;
   });
 
-  // const getCart = async ()=>{
-  //   try{
-  //     const response = await API.get("/carts");
-  //     setCart(response.data.data);
-  //     setIdCarts(response.data.data);
-  //   }catch(error){
-  //     console.log(error);
-  //   }
-  // };
+
 
 
   const dataCarts = cart?.filter((item) => {
@@ -50,12 +37,6 @@ function Cart() {
   const form = {
     amount: resultTotal,
   };
-
-  // let handleDelete = async (id) => {
-  //   console.log(id);
-  //   await API.delete(`/cart/${id}`);
-  //   refetch();
-  // };
 
   console.log(form)
 

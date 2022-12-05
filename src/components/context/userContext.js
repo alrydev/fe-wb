@@ -28,7 +28,6 @@ function reducer(user, action) {
             localStorage.removeItem("token");
             return {
                 isLogin: false,
-                user: {}
             }
         default: throw new Error()
     }
